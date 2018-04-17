@@ -43,7 +43,7 @@ class TopicsController extends Controller
         $topic->fill($request->all());
         $topic->user_id = Auth::id();
         $topic->save();
-		return redirect()->to($topic->lilnk())->with('success', 'Created successfully.');
+		return redirect()->to($topic->link())->with('success', 'Created successfully.');
 	}
 
 	public function edit(Topic $topic)
