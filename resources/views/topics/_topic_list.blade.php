@@ -1,4 +1,4 @@
-@if (count($topics))
+@if (count($topics->toArray()))
 
     <ul class="media-list">
         @foreach ($topics as $topic)

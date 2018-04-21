@@ -1,4 +1,4 @@
-@if (count($replies))
+@if (count($replies->toArray()))
 
 <ul class="list-group">
     @foreach ($replies as $reply)
