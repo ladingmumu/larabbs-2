@@ -31,6 +31,8 @@ $api->version('v1', [
         $api->put('authorizations/current', 'AuthorizationsController@update')->name('api.authorizations.update');
         // 删除token
         $api->delete('authorizations/current', 'AuthorizationsController@destroy')->name('api.authorizations.destroy');
+        // 分类
+        $api->get('categories', 'CategoriesController@index')->name('api.categories.index');
 
         /**
          * 需要 token 验证的接口
