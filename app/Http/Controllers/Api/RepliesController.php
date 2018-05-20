@@ -18,4 +18,17 @@ class RepliesController extends Controller
 
         return $this->response->item($reply, new ReplyTransformer())->setStatusCode(201);
     }
+
+    public function destory(Topic $topic, Reply $reply)
+    {
+        if ($reply->topic_id != $topic->id)
+        {
+            return $this->response->errorBadRequest();
+        }
+
+        $this->authorize('destory', $reply);
+        $reply->delete();
+
+        return $this->response->noContent();
+    }
 }
